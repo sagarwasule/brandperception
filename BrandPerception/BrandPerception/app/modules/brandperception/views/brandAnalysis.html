@@ -1,0 +1,66 @@
+﻿<div class="container" ng-controller="brandPerceptionController">
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-8 control-group">
+                <label class="control-label input-label">Search text</label>
+                <div class="controls">
+                    <input type="text" class="form-control" id="txtInput" name="Input"
+                           ng-model="request.SearchText" />
+                </div>
+            </div>
+            <div class="col-md-4 control-group">
+                <label class="control-label input-label">&nbsp;</label>
+                <div class="controls">
+                    <button class="btn btn-default pull-left" type="button"
+                            ng-click="analyseSearch()">
+                        {{::'Search'|translate}}
+                    </button>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="container">
+
+
+                <div class="row bs-wizard" style="border-bottom:0;">
+
+                    <div class="col-xs-3 bs-wizard-step" 
+                         ng-class="{ 'complete' : currentStep > 1, 'active' : currentStep == 1, 'disabled' : currentStep < 1 }">
+                        <div class="text-center bs-wizard-stepnum">Step 1</div>
+                        <div class="progress"><div class="progress-bar"></div></div>
+                        <a href="#" class="bs-wizard-dot"></a>
+                        <div class="bs-wizard-info text-center">Downloading data.</div>
+                    </div>
+
+                    <div class="col-xs-3 bs-wizard-step"
+                         ng-class="{ 'complete' : currentStep > 2, 'active' : currentStep == 2, 'disabled' : currentStep < 2 }">
+                        <!-- complete -->
+                        <div class="text-center bs-wizard-stepnum">Step 2</div>
+                        <div class="progress"><div class="progress-bar"></div></div>
+                        <a href="#" class="bs-wizard-dot"></a>
+                        <div class="bs-wizard-info text-center">Analysing data.</div>
+                    </div>
+
+                    <div class="col-xs-3 bs-wizard-step"
+                         ng-class="{ 'complete' : currentStep > 3, 'active' : currentStep == 3, 'disabled' : currentStep < 3 }">
+                        <!-- complete -->
+                        <div class="text-center bs-wizard-stepnum">Step 3</div>
+                        <div class="progress"><div class="progress-bar"></div></div>
+                        <a href="#" class="bs-wizard-dot"></a>
+                        <div class="bs-wizard-info text-center">Preparing Report</div>
+                    </div>
+
+                    <div class="col-xs-3 bs-wizard-step"
+                         ng-class="{ 'complete' : currentStep > 4, 'active' : currentStep == 4, 'disabled' : currentStep < 4  }">
+                        <!-- active -->
+                        <div class="text-center bs-wizard-stepnum">Step 4</div>
+                        <div class="progress"><div class="progress-bar"></div></div>
+                        <a href="#" class="bs-wizard-dot"></a>
+                        <div class="bs-wizard-info text-center">Report Ready !</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
